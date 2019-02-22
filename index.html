@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timer</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="StatefulEmitter.js"></script>
+	<script type="text/javascript" src="render.js"></script>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="timer"></div>
+
+	<script>
+		var timerElem = document.querySelector("#timer");
+
+		var state$ = new StatefulEmitter({time: 10, running: false});
+
+		state$.subscribe(state => 
+			timerElem.innerHTML = render(state));
+
+		state$.subscribe(state =>  
+			timer(state));
+
+	</script>
+</body>
+</html>
