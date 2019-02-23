@@ -10,8 +10,8 @@ function timer(state) {
 	}; 
 
 	if (this.state.time == 0 || (prevState.running == true && this.state.running == false) ) {  
-    	clearInterval(interval);
-    	interval = false;
+    		clearInterval(interval);
+    		interval = false;
 	}
 
 	function timerSubtr() {
